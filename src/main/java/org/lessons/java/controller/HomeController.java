@@ -39,19 +39,15 @@ public class HomeController {
 
     @GetMapping("/movies")
     public String movies(Model model) {
-        List<String> movieTitles = getBestMovies().stream()
-            .map(Movie::getTitle)
-            .collect(Collectors.toList());
-        model.addAttribute("titles", String.join(", ", movieTitles));
+        List<Movie> movies = getBestMovies();
+        model.addAttribute("movies", movies);
         return "movies";
     }
 
     @GetMapping("/songs")
     public String songs(Model model) {
-        List<String> songTitles = getBestSongs().stream()
-            .map(Song::getTitle)
-            .collect(Collectors.toList());
-        model.addAttribute("titles", String.join(", ", songTitles));
+        List<Song> songs = getBestSongs();
+        model.addAttribute("songs", songs);
         return "songs";
     }
     
