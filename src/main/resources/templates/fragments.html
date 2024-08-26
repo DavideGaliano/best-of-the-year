@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title th:fragment="title">Best of the Year</title>
-    <!-- Bootstrap CSS -->
-    <link th:fragment="styles" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<head >
+	<th:block th:fragment="head">
+		<title>Best of the Year</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="@{/webjars/bootstrap/5.3.3/css/bootstrap.bundle.min.css}" >
+	
+	</th:block>
+    
 </head>
 <body>
     <!-- Navbar Fragment -->
@@ -23,5 +27,14 @@
             </ul>
         </div>
     </nav>
+	
+	<footer th:fragment="footer">
+		<!-- Footer Content-->
+	</footer>
+	
+	<th:block th:fragment="scripts">
+		<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+	</th:block>
+	
 </body>
 </html>
